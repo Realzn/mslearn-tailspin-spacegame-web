@@ -1,4 +1,5 @@
-FROM mcr.microsoft.com/devcontainers/dotnet:6.0
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS base
+WORKDIR /app
 
 # Install NodeJS
 # [Choice] Node.js version: none, lts/*, 18, 16, 14
@@ -45,3 +46,4 @@ RUN chmod +x /home/vscode/azure-pipelines/start.sh
 
 # Clean up
 RUN rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+
